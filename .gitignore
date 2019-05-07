@@ -32,7 +32,6 @@ bower_components
 
 .idea
 **/node_modules/*
-**/.firebaserc
 */npm-debug.log
 lerna-debug.log
 *~
