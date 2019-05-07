@@ -6,7 +6,7 @@ const TRIGGER_ID = functions.config().cloudbuild.trigger_id;
 
 admin.initializeApp();
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
+exports.runCloudBuildTrigger = functions.https.onRequest((request, response) => {
  return admin.credential.applicationDefault().getAccessToken()
      .then(accessTokenObj => {
       return accessTokenObj.access_token;
