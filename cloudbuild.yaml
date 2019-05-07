@@ -1,6 +1,7 @@
-- name: gcr.io/$PROJECT_ID/firebase
-  args: ["deploy", "--only", "functions"]
-  secretEnv: ['FIREBASE_TOKEN']
+steps:
+  - name: gcr.io/$PROJECT_ID/firebase
+    args: ["deploy", "--only", "functions"]
+    secretEnv: ['FIREBASE_TOKEN']
 secrets:
   - kmsKeyName: 'projects/gatsby-contentful-firebase/locations/global/keyRings/cloudbuilder/cryptoKeys/firebase-token'
     secretEnv:
