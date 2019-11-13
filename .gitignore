@@ -33,6 +33,7 @@ bower_components
 .idea
 **/node_modules/*
 */npm-debug.log
+*/firebase-debug.log
 lerna-debug.log
 *~
 service-account-credentials.json

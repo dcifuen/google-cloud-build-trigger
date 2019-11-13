@@ -6,6 +6,7 @@ Firebase function that runs a Google Cloud Build trigger.
 Clone the repo and install deps
 ```
 git clone https://github.com/dcifuen/google-cloud-build-trigger.git
+cd functions
 yarn install
 ```
 
@@ -18,8 +19,10 @@ https://cloud.google.com/cloud-build/docs/api/reference/rest/v1/projects.trigger
 
 ```bash
 firebase functions:config:set cloudbuild.trigger_id="<TRIGGER_ID>"
-npm run deploy
+yarn deploy
 ```
+
+3. In the Google Cloud IAM console, add the `Cloud Build Service Account` permission to the `App Engine default service account`. With that the function can call the Cloud Build API.
 
 ### Google Cloud Build Trigger From Git (Optional)
 If you want to deploy this function on every git push event follow the instructions here: https://github.com/GoogleCloudPlatform/cloud-builders-community/tree/master/firebase and update the `cloudbuild.yaml` with your encrypted tokens

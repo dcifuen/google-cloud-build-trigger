@@ -4,9 +4,11 @@ const rp = require('request-promise');
 
 const TRIGGER_ID = functions.config().cloudbuild.trigger_id;
 
+
 admin.initializeApp();
 
 exports.runCloudBuildTrigger = functions.https.onRequest((request, response) => {
+ console.info(`Running Cloud Build with trigger id ${TRIGGER_ID}`);
  return admin.credential.applicationDefault().getAccessToken()
      .then(accessTokenObj => {
       return accessTokenObj.access_token;
